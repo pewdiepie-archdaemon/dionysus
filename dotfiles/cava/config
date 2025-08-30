@@ -1,0 +1,71 @@
+; ──────────────────────────────────────────────────────────────────────────
+;  °˖* ૮(  • ᴗ ｡)っ🍸  pewdiepie/archdaemon/dionysus
+;  shhheersh
+;  configs for cava
+;  vers. 1.0.0
+; ──────────────────────────────────────────────────────────────────────────
+
+; ── General ───────────────────────────────────────────────────────────────
+[general]
+; framerate – frames per second (non‑negative)
+framerate = 64
+
+; number of bars (0 = auto). 64 gives a nice “classic” look.
+bars = 64
+
+; ── Input ─────────────────────────────────────────────────────────────────
+[input]
+; Choose the backend you actually use.  Here we keep *pulse* active and
+; leave the other back‑ends commented for easy switching.
+method = pulse
+source = alsa_output.pci-0000_06_00.6.analog-stereo.monitor
+;method = pipewire
+;source = auto
+;method = alsa
+;source = hw:Loopback,1
+;method = fifo
+;source = /tmp/mpd.fifo
+;method = shmem
+;source = /squeezelite-AA:BB:CC:DD:EE:FF
+;method = portaudio
+;source = auto
+;method = sndio
+;source = default
+;method = oss
+;source = /dev/dsp
+;method = jack
+;source = default
+
+; ── Output ────────────────────────────────────────────────────────────────
+[output]
+; Raw output is the most portable – it writes binary/ascii data to a FIFO.
+method = raw
+raw_target = /tmp/cava.raw          ; where the data will be written
+data_format = ascii                 ; ascii makes it easy to inspect with `cat`
+
+; Uncomment and adjust if you ever need binary data.
+;bit_format = 16bit
+
+; ── Colours ───────────────────────────────────────────────────────────────
+[color]
+; Keep the terminal’s own palette (default) – edit only if your terminal
+; supports true‑colour changes.
+;background = default
+;foreground = default
+
+; ── Smoothing ─────────────────────────────────────────────────────────────
+[smoothing]
+; The “Monstercat” smoothing algorithm gives a nice, slightly‑soft look.
+; Set to 0 to disable, 1‑100 to increase smoothness.
+monstercat = 0
+waves      = 0
+
+; ── Equaliser (optional) ─────────────────────────────────────────────────
+[eq]
+; Uncomment the bands you want to boost/cut.  Values are 0‑100 where 50 is
+; “no change”.  Example shows a flat (all‑50) EQ.
+;1 = 50   ; bass
+;2 = 50
+;3 = 50   ; mid‑tone
+;4 = 50
+;5 = 50   ; treble
