@@ -1,0 +1,54 @@
+;; ── Cpu ram storage ───────────────────────────────────────────────────
+;; Text displaying cpu load, ram usage, storage
+;; Anchored middle left
+
+(defwindow cpu_ram_storage_bars
+  :visible show_eww
+  :anchor "top right"
+  :monitor 0
+  :geometry (geometry :x "33px" :y "482px" :width "450px" :height "140px")
+  :stacking "bg"
+  :exclusive false
+  :focusable false
+
+  (box :orientation "vertical" :halign "start" :space "10px"
+;; ==== CPU LOAD ====
+    (label :text "  [ CPU LOAD ]" :class "stats-label" :halign "start")
+    (box :orientation "horizontal" :halign "start" :space "4px"
+    (box :class "module-frame" :orientation "vertical" :halign "start" :style "margin-top: -8px;"
+        (label :text cpu_bar :class "ram-bar")
+      )
+       (box :class "module-frame" :orientation "vertical" :halign "start" :style "min-width: 40px; padding: 0px;"  
+        (label :text cpu_usage :class "ram-bar2" :halign "center"))
+    
+    )
+   
+
+    ;; ==== RAM USAGE ====
+    (label :text "  [ RAM USAGE ]" :class "stats-label" :halign "start")
+    (box :orientation "horizontal" :halign "center" :space "4px"
+      ;; LEFT: ASCII RAM BAR
+      (box :class "module-frame" :orientation "vertical" :halign "start" :style "margin-top: -8px;"
+        (label :text ram_bar :class "ram-bar"))
+      ;; RIGHT: RAM PERCENT
+      (box :class "module-frame" :orientation "vertical" :halign "start" :style "padding: 0px; ; min-width: 40px" 
+
+        (label :text ram_percent :class "ram-bar2" :halign "center"))
+    )
+    
+    ;; ==== CPU LOAD ====
+
+    ;; ==== STORAGE REMAINING ====
+    (label :text "  [ STORAGE ]" :class "stats-label" :halign "start")
+    (box :orientation "horizontal" :halign "center" :space "4px"
+      (box :class "module-frame" :orientation "vertical" :halign "start" :style "margin-top: -8px;"
+        (label :text storage_bar :class "ram-bar"))
+      (box :class "module-frame" :orientation "vertical" :halign "start" :style "min-width: 35px; padding: 2px;"
+        (label :text storage_percent :class "ram-bar2" :halign "center"))
+    )
+
+
+ 
+  )
+)
+

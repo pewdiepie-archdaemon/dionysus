@@ -1,0 +1,19 @@
+;; ── audio_status ───────────────────────────────────────────────────
+;; Text displaying audio status.
+;; Anchored top outside visualizer
+
+(defwindow audio_status
+  :visible show_eww
+  :anchor "top right"
+  :geometry (geometry :x "79px" :y "288px" :width "300px" :height "40px")
+  :stacking "bg"
+  :monitor 0
+  :exclusive false
+  :focusable false
+
+  (box :orientation "vertical" :halign "end"
+(label :text ascii_audio_status :class "ascii-core-status")
+
+  )
+)
+

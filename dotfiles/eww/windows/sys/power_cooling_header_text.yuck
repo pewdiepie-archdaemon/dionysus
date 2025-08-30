@@ -1,0 +1,23 @@
+;; ── power cooling header ───────────────────────────────────────────────────
+;; Text displaying header for cooling and power
+;; Anchored bottom
+
+(defwindow power-cooling_header_text
+  :visible show_eww
+  :anchor "top left"
+  :monitor 0
+  :geometry (geometry :x "-52px" :y "700px" :width "100px" :height "8px")
+  :stacking "bg"
+  :exclusive false
+  :focusable false
+
+  ;; Switch to horizontal to place boxes side by side
+  (box :orientation "horizontal" :halign "center" :space "12px"
+    ;; First box: POWER GRID
+    (label :text "[ POWER GRID ]" :class "stats-label3")
+
+    ;; Second box: another label, e.g. MODE STATUS
+    (label :text "[ COOLING ]" :class "stats-label3" :halign "center")
+  )
+)
+

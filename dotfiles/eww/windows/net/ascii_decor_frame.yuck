@@ -1,0 +1,19 @@
+;; ── ascii decor frame ───────────────────────────────────────────────────
+;; Text displaying audio status.
+;; Anchored top inside visualizer
+
+(defwindow ascii_decor_frame
+  :visible show_eww
+  :anchor "bottom right"
+:geometry (geometry :x "30px" :y "808px" :width "220px" :height "100px")
+
+  :stacking "bg"
+  :exclusive false
+  :focusable false
+  :monitor 0
+
+  (box :orientation "vertical" :halign "center" :valign "center"
+    (label :text ascii_decor1 :class "ascii-decor1")
+  )
+)
+

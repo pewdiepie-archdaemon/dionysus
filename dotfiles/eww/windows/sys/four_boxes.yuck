@@ -1,0 +1,90 @@
+;; ── four boxes ───────────────────────────────────────────────────
+;; four boxes showing uptime, battery life, cpu temp, gpu temp
+;; Anchored top
+
+(defwindow four_boxes
+  :visible show_eww
+  :anchor "right"
+  :monitor 0
+  :geometry (geometry :x "4" :y "340px" :width "430px" :height "140")
+  :stacking "bg"
+  :exclusive false
+
+  (box :orientation "horizontal" :space-evenly true
+
+    ;; LEFT COLUMN
+    (box :orientation "vertical" :halign "center" :space "10px"
+
+      ;; REACTOR UPTIME
+      (box :class "module-frame" :orientation "vertical" :halign "center"
+        (label :text "[ REACTOR UPTIME ]" :class "stats-label")
+        (box :width "140px"
+          (label :text uptime_full :class "label-primary" :halign "center"))
+      )
+
+   ;; CPU TEMP
+(box :class "module-frame" :orientation "vertical" :halign "center"
+  (label :text "[ CPU TEMP ]" :class "stats-label")
+  (box :width "140px"
+    (label :text "${cpu_temp}" :class "label-primary" :halign "center"))
+)
+
+    )
+
+    ;; RIGHT COLUMN
+    (box :orientation "vertical" :halign "center" :space "10px"
+
+      ;; MELTDOWN CLOCK
+      (box :class "module-frame" :orientation "vertical" :halign "center"
+        (label :text "[ MELTDOWN CLOCK ]" :class "stats-label")
+        (box :width "140px"
+          (label :text battery_time :class "label-primary" :halign "center"))
+      )
+
+      ;; GPU TEMP
+      (box :class "module-frame" :orientation "vertical" :halign "center"
+        (label :text "[ GPU TEMP ]" :class "stats-label")
+        (box :width "140px"
+          (label :text "+${gpu_temp}°C" :class "label-primary" :halign "center"))
+          
+          
+          
+          
+      )
+      
+      
+    )
+    
+    
+
+    ;; Uncomment these when you want them again:
+
+    ;; ;; MEMORY
+    ;; (box :class "module-frame" :orientation "vertical" :halign "center"
+    ;;   (label :text "[ MEMORY ]" :class "stats-label")
+    ;;   (box :width "140px"
+    ;;     (label :text ram :class "label-primary" :halign "center"))
+    ;; )
+
+    ;; ;; STORAGE
+    ;; (box :class "module-frame" :orientation "vertical" :halign "center"
+    ;;   (label :text "[ STORAGE ]" :class "stats-label")
+    ;;   (box :width "140px"
+    ;;     (label :text disk :class "label-primary" :halign "center"))
+    ;; )
+
+    ;; ;; COOLING
+    ;; (box :class "module-frame" :orientation "vertical" :halign "center"
+    ;;   (label :text "[ COOLING ]" :class "stats-label")
+    ;;   (box :width "140px"
+    ;;     (label :text fan_speed :class "label-primary" :halign "center"))
+    ;; )
+  )
+)
+
+
+
+
+
+
+

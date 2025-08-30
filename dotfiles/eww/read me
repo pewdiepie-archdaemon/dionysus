@@ -1,0 +1,54 @@
+;; ──────────────────────────────────────────────────────────────────────────
+;;  °˖* ૮(  • ᴗ ｡)っ🍸  pewdiepie/archdaemon/dionysh
+;;  shhheersh
+;;  EWW HUD config, some stuff duct taped, some stuff glued
+;;  vers. 1.0
+;; ──────────────────────────────────────────────────────────────────────────
+
+A custom **eww (Elkowar’s Wacky Widgets) HUD** for Linux desktops — duct-taped together ASCII art, system stats, network monitoring, and reactor-core vibes.
+
+---
+
+## Requirements
+- **eww** (Elkowar’s Wacky Widgets)  
+- **jq** (for JSON parsing)  
+- **lm-sensors** (for voltages, temps, fans)  
+- **nvidia-smi** (if using NVIDIA GPU monitoring)  
+- **curl**  
+- **ping**  
+
+---
+
+## Usage
+To launch the full HUD:
+
+eww open-many right_internet_text \
+               cpu_ram_storage_bars \
+               ascii_decor_frame \
+               active_workspace \
+               visualizer_window \
+               workspace_window_text \
+               power-cooling_header_text \
+               net_bars \
+               welcome_text \
+               orange_workspace \
+               four_boxes \
+               audio_status \
+               power_mode_text \
+               right_fan_data
+               
+Visualizer needs cava, see my cava dotfiles
+               
+## Auto run via hyprland
+exec-once = ~/.config/eww/autostart-eww.sh
+exec-once = ~/.config/eww/scripts/audio/ascii_visualizer.py &
+exec-once = cava -p ~/.config/cava/config &
+
+### Configuration Notes
+
+Voltages & temps rely on lm-sensors. Run sensors-detect once.
+GPU stats require nvidia-smi.
+Network assumes wlp4s0 — change your interface name in net_* scripts.
+VPN detection looks for 10.6.0.x (NordVPN via strongSwan). Adjust if using another provider.
+
+MIT License, use as u want

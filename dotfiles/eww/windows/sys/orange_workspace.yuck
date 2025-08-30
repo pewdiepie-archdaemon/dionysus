@@ -1,0 +1,19 @@
+;; ── orange workspace ───────────────────────────────────────────────────
+;; Vectors displaying reactor number in cyrilic text
+;; Anchored middle right
+
+(defwindow orange_workspace
+  :visible show_eww
+  :anchor "top left"
+  :geometry (geometry :x "371px" :y "509px" :width "60px" :height "100px")
+  :stacking "bg"
+  :exclusive false
+  :focusable false
+  :monitor 0
+ 
+  (box :orientation "vertical" :space "10px" 
+    (box :class "info-right-box" :valign "end" :halign "start" (label :text "А1" :class "info-right-text"     ))
+    (box :class "info-right-box" :valign "end" :halign "start" (label :text "Б2" :class "info-right-text"    ))
+    (box :class "info-right-box" :valign "end" :halign "start" (label :text "В3" :class "info-right-text"    ))
+    (box :class "info-right-box" :valign "end" :halign "start" (label :text "Г4" :class "info-right-text"    ))))
+

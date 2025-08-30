@@ -1,0 +1,24 @@
+;; ── right internet text ───────────────────────────────────────────────────
+;; Text displaying ping and vpn status
+;; Anchored top very bottom right
+
+(defwindow right_internet_text
+  :visible show_eww
+  :anchor "top left"
+  :monitor 0
+  :geometry (geometry :x "42px" :y "976px" :width "320px" :height "80px")
+  :stacking "bg"
+  :exclusive false
+  :focusable false
+
+  (box :class "internet-clean-box" :orientation "vertical" :halign "center" :space "8px"
+    (box :orientation "horizontal" :halign "center" :space "6px"
+      (label :text download_speed :class "label-primary2")
+      (label :text upload_speed :class "label-primary2")
+      (label :text ping_ms :class "label-primary2")
+      (label :text vpn_status_text :class "label-primary2")
+
+    )
+  )
+)
+

@@ -1,0 +1,49 @@
+;; ── active workspace ───────────────────────────────────────────────────
+;; Text displaying active/inactive workspaces
+;; Anchored middle right
+
+(defwindow active_workspace
+  :visible show_eww
+  :anchor "top left"
+  :geometry (geometry :x "267px" :y "502px" :width "100px" :height "200px")
+  :stacking "bg"
+  :exclusive false
+  :monitor 0
+  :focusable false
+
+  (box :orientation "vertical" :space "10px" :valign "center"
+  
+    ;; === Workspace 1 ===
+    (box :class "info-left" :orientation "vertical" :space "2px" :style "margin-bottom: 15px;"
+
+      (label :text ws1 :class "ascii-core-status2"))
+
+    ;; === Workspace 2 ===
+    (box :class "info-left" :orientation "vertical" :space "2px" :style "margin-bottom: 15px;"
+
+      (label :text ws2 :class "ascii-core-status2"))
+
+
+    ;; === Workspace 3 ===
+    (box :class "info-left" :orientation "vertical" :space "2px" :style "margin-bottom: 15px;"
+
+      (label :text ws3 :class "ascii-core-status2"))
+
+    ;; === Workspace 4 ===
+    (box :class "info-left" :orientation "vertical" :space "2px" :style "margin-bottom: 15px;"
+
+      (label :text ws4 :class "ascii-core-status2"))
+  )
+)
+
+  
+  
+;;box :orientation "vertical" :space "10px" :valign "center"
+  ;; (label :text "Workspace 1" :class "label-primary")
+    ;;(label :text "Workspace 2" :class "label-primary")
+     ;;(label :text "" :class "label-primary")
+    ;;
+    
+   ;; (label :text "Workspace 3" :class "label-primary")
+   ;; (label :text "Workspace 4" :class "label-primary")))
+

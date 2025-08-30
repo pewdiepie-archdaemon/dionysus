@@ -1,0 +1,52 @@
+;; ── net bars ───────────────────────────────────────────────────
+;; Text header and vectors showing network info
+;; Anchored bottom
+
+(defwindow net_bars
+  :visible show_eww
+  :anchor "top left"
+  :geometry (geometry :x "9px" :y "638px" :width "420px" :height "120px")
+  :stacking "bg"
+  :exclusive false
+  :focusable false
+  :monitor 0
+
+  ;; Horizontal layout for side-by-side bars
+  (box :orientation "horizontal" :halign "center" :space "10px"
+
+    ;; DOWNLOAD BAR
+    (box :orientation "vertical" :halign "center"   
+      (label :text "[ DOWNLOAD ]"  :style "margin-top: 160px;" :class "stats-label")
+      (box :class "module-frame2" 
+        (label :text download_bar :class "ram-bar")) 
+    )
+
+    ;; UPLOAD BAR
+    (box :orientation "vertical" :halign "center" :style "min-width: 81px;"
+      (label :text "[ UPLOAD ]"   :style "margin-top: 160px;" :class "stats-label")
+      (box :class "module-frame2"
+        (label :text upload_bar :class "ram-bar"))
+    )
+
+    ;; LATENCY BAR
+    (box :orientation "vertical" :halign "center"
+      (label :text "[ LATENCY ]"  :style "margin-top: 160px;" :class "stats-label")
+      (box :class "module-frame2"
+        (label :text ping_bar :class "ram-bar"))
+    )
+    
+;; VPN BAR
+(box :orientation "vertical" :halign "center" :style "min-width: 81px;"
+  (label :text "[ VPN ]" :style "margin-top: 160px;" :class "stats-label")
+  (box :class "module-frame2"
+    (label
+      :text vpn_bar
+      :markup true     ;; allow ASCII multi-line
+      :class "ram-bar"))
+      
+)
+
+
+  )
+)
+

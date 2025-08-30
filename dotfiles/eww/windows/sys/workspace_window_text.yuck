@@ -1,0 +1,17 @@
+;; ── workspace window text ───────────────────────────────────────────────────
+;; Text and ascii showing active workspace number
+;; Anchored top middle
+
+(defwindow workspace_window_text
+  :anchor "center"
+  :monitor 0
+  :geometry (geometry :x "9px" :y "300px" :width "420px" :height "220px")
+  :stacking "bg"
+  :exclusive false
+  :focusable false
+
+  (box :orientation "vertical" :halign "center"
+    (label :text reactor_core_layout :class "ascii-core-status2")
+  )
+)
+
