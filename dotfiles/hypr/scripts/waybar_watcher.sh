@@ -3,8 +3,8 @@
 logfile="/tmp/waybar_watcher_loop_final.log"
 
 # Wallpapers
-wallpaper_with_window="/home/pewds/.config/hypr/wallpapers/black.png"
-wallpaper_without_window="/home/pewds/.config/hypr/wallpapers/bg_wallpaper.png"
+wallpaper_with_window="~/.config/hypr/wallpapers/black.png"
+wallpaper_without_window="~/.config/hypr/wallpapers/bg_wallpaper.png"
 
 current_wallpaper=""
 eww_visible=false
