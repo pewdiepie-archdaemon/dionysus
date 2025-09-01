@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 logfile="/tmp/waybar_watcher_loop_final.log"
 

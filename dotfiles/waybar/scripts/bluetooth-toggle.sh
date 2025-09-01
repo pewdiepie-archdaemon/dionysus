@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # ── bluetooth-toggle.sh ──────────────────────────────────────────────────────
 # Toggle Bluetooth on/off using rfkill.
 # Usage: Waybar `bluetooth` module :on-click

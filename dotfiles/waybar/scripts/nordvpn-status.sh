@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # ── nordvpn-status.sh ──────────────────────────────────────
 # Description: Checks if VPN interface is active via IP range
 # Usage: Called by Waybar `custom/vpn` every 5s

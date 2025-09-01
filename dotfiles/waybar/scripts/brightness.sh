@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # ── brightness.sh ─────────────────────────────────────────
 # Description: Shows current brightness with ASCII bar + tooltip
 # Usage: Waybar `custom/brightness` every 2s

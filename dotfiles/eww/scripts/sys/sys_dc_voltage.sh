@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # ─────────────────────────────────────────────────────────────────────────────
 #  sys_cpu_voltage.sh
 #  Reads CPU voltage (in0) from lm-sensors and prints it in volts.

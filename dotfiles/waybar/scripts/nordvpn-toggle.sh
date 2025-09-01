@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # ── vpn-toggle.sh ─────────────────────────────────────────
 # Description: Toggle VPN on/off via systemd service
 # Usage: Called by Waybar `custom/vpn` on click

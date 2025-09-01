@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # ── volume.sh ─────────────────────────────────────────────
 # Description: Shows current audio volume with ASCII bar + tooltip
 # Usage: Waybar `custom/volume` every 1s

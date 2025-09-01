@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # ─────────────────────────────────────────────────────────────────────────────
 #  Toggles ASUS keyboard backlight "breathing" effect.
 #  Bound to XF86Launch3 (F4) in Hyprland config.

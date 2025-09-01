@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # ── animated-neofetch.sh ────────────────────────────────
 # Description: Animated ASCII frames + cached neofetch/fastfetch system info
 # Usage: ./animated-neofetch.sh [delay]

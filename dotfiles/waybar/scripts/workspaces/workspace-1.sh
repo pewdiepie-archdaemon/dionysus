@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # workspace-1.sh — highlight workspace 1 if active
 
 active=$(hyprctl activeworkspace -j | jq '.id')

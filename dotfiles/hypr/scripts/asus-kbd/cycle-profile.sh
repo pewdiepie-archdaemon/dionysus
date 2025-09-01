@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # ─────────────────────────────────────────────────────────────────────────────
 #  Cycles ASUS performance profiles (Performance → Balanced → Silent).
 #  Uses `asusctl profile` for switching.

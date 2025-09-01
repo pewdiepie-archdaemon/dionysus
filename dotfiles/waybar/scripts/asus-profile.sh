@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # ── asus-profile.sh ───────────────────────────────────────  
 # Description: Display current ASUS power profile with color
 # Usage: Called by Waybar `custom/asus-profile`

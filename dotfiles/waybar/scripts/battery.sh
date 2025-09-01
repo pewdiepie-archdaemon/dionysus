@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # ── battery.sh ─────────────────────────────────────────────
 # Description: Shows battery % with ASCII bar + dynamic tooltip
 # Usage: Waybar `custom/battery` every 10s

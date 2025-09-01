@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # ─────────────────────────────────────────────────────────────────────────────
 #  Adjusts ASUS keyboard backlight brightness (up/down).
 #  Reads max brightness from sysfs.

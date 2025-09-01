@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # ── brightness-toggle.sh ─────────────────────────────
 # Description: Cycle screen brightness between 30%, 60%, and 100%
 # Usage: Waybar `custom/brightness` on-click
