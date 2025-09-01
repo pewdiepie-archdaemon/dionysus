@@ -8,8 +8,6 @@
 #          <span foreground='#bf616a'>[ФАНТОМ]: KAPUTT</span>
 # ───────────────────────────────────────────────────────────
 
-#!/bin/bash
-
 if sudo ipsec statusall 2>/dev/null | grep -q "ESTABLISHED"; then
   country=$(curl -s ifconfig.co/country 2>/dev/null)
   [[ -z "$country" ]] && country="UNKNOWN"
