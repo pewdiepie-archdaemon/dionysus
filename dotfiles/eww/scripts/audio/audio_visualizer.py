@@ -9,9 +9,12 @@
 
 import argparse
 import os
+import select
 import signal
 import sys
 import time
+from pathlib import Path
+from typing import NoReturn
 
 import numpy as np
 
@@ -21,7 +24,7 @@ DEFAULT_HEIGHT = 12
 DEFAULT_FPS    = 30
 DEFAULT_DECAY  = 0.92               # lower → longer trails
 CHARS = [" ", ".", ":", "·", "•", "•"]   # ascending intensity
-
+FIFO_MAX_READ  = 4096
 
 def parse_frame(line: str, width: int) -> list[int]:
     """Turn a semicolon‑separated line from CAVA into a list of ints."""
@@ -42,7 +45,7 @@ def get_char_index(val: float) -> int:
     return min(int(val * (len(CHARS) - 1)), len(CHARS) - 1)
 
 
-def build_frame(_, history: np.ndarray, height: int, width: int) -> list[str]:
+def build_frame(history: np.ndarray, height: int, width: int) -> list[str]:
     """Create the ASCII rows from the decay buffer."""
     frame = [[" " for _ in range(width)] for _ in range(height)]
 
@@ -57,29 +60,30 @@ def build_frame(_, history: np.ndarray, height: int, width: int) -> list[str]:
 
 
 def run(
-    cava_path: str,
-    out_path: str,
+    *,
+    cava_fifo_fd: int,
+    out_path: Path,
     width: int = DEFAULT_WIDTH,
     height: int = DEFAULT_HEIGHT,
     fps: int = DEFAULT_FPS,
     decay: float = DEFAULT_DECAY,
+    fifo_max_read: int = FIFO_MAX_READ
 ) -> None:
     """Main loop – read CAVA output, update the decay buffer, write ASCII."""
-    os.makedirs(os.path.dirname(out_path), exist_ok=True)
+    if not out_path.parent.exists():
+        os.makedirs(out_path.parent)
+
+    polling_handler = select.poll()
+    polling_handler.register(cava_fifo_fd)
 
     decay_buffer = np.zeros((height, width), dtype=float)
 
     while True:
-        try:
-            with open(cava_path, "r") as f:
-                # read one line at a time from the FIFO
-                line = f.readline()
-                if not line:
-                    time.sleep(1.0 / fps)
-                    continue
-        except Exception:
+        if not polling_handler.poll(select.POLLIN):
             time.sleep(1.0 / fps)
             continue
+
+        line = os.read(cava_fifo_fd, fifo_max_read).decode()
 
         # 1️⃣ Parse & normalise
         values = parse_frame(line, width)
@@ -95,7 +99,7 @@ def run(
         decay_buffer = np.maximum(decay_buffer * decay, new_frame)
 
         # 4️⃣ Render ASCII and write out
-        ascii_lines = build_frame(values, decay_buffer, height, width)
+        ascii_lines = build_frame(decay_buffer, height, width)
         with open(out_path, "w") as out:
             out.write("\n".join(ascii_lines))
 
@@ -103,9 +107,12 @@ def run(
 
 
 
-def _handle_sigint(signum, frame):
+def _handle_sigint(fifo_fd: int) -> NoReturn:
     """Graceful exit on Ctrl‑C."""
     print("\n[+] CAVA ASCII visualizer stopped.")
+
+    os.close(fifo_fd)
+
     sys.exit(0)
 
 
@@ -114,9 +121,9 @@ def main() -> None:
         description="CAVA → ASCII visualizer (compatible with eww/widgets)",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
-    parser.add_argument("--cava-path", default="/tmp/cava.raw",
+    parser.add_argument("--cava-path", type=Path, default="/tmp/cava.raw",
                         help="Path to CAVA raw output file")
-    parser.add_argument("--out-path",  default="/tmp/visualizer.txt",
+    parser.add_argument("--out-path", type=Path, default="/tmp/visualizer.txt",
                         help="File where ASCII art will be written")
     parser.add_argument("--width",  type=int, default=DEFAULT_WIDTH,
                         help="Number of columns (match CAVA `bars` setting)")
@@ -128,11 +135,18 @@ def main() -> None:
                         help="Trail‑fade factor (0‑1, lower = slower fade)")
 
     args = parser.parse_args()
-    signal.signal(signal.SIGINT, _handle_sigint)
+
+    # make our life easier regarding the fifo
+    assert args.cava_path.exists()
+    assert args.cava_path.is_fifo()
+
+    cava_fifo_fd = os.open(args.cava_path, os.O_RDONLY | os.O_NONBLOCK)
+
+    signal.signal(signal.SIGINT, lambda _, __: _handle_sigint(cava_fifo_fd))
 
     print("[+] Starting CAVA ASCII visualizer …")
     run(
-        cava_path=args.cava_path,
+        cava_fifo_fd=cava_fifo_fd,
         out_path=args.out_path,
         width=args.width,
         height=args.height,
