@@ -12,7 +12,7 @@ mkdir -p ~/.config/alacritty
 # Create the symlink
 ln -s "$(pwd)/dotfiles/alacritty/alacritty.toml" ~/.config/alacritty/alacritty.toml```
 ```
-## Naviagtor
+## Navigator
 
 *   [Alacritty](./dotfiles/alacritty/README.md)
 *   
