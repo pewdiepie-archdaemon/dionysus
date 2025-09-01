@@ -1,5 +1,9 @@
 # Firefox Color Theme
 
+───────────────────────────────────────────────  
+ °˖* ૮( • ᴗ ｡)っ🍸 shheersh - Dionysus vers. 1.0   
+ ───────────────────────────────────────────────  
+
 Nord-inspired, neon-radioactive firefox theme
 ![Firefox Demo](../../assets/demo-firefox.png)
 
