@@ -1,6 +1,6 @@
 #!/bin/bash
 
-logfile="/tmp/waybar_watcher_loop_final.log"
+logfile="${HYPR_WATCHER_LOGFILE:-/dev/null}"
 
 # Wallpapers
 wallpaper_with_window="/home/pewds/.config/hypr/wallpapers/black.png"
