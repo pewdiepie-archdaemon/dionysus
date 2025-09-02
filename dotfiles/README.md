@@ -32,6 +32,14 @@
 Rice config for **Hyprland** on Arch Linux,  
 running on my **ROG Zephyrus G15** (_dionysus_). 
 
+## Install
+```bash
+# this will install stow
+sudo pacman -S stow
+# this will symlink the dotfiles to their individual folders in .config.
+stow .
+```
+
 ## Features
   - Animated **Neofetch**  
   - Dynamic **Waybar**  

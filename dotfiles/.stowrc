@@ -1,0 +1,5 @@
+--target=~/.config/
+--adopt
+--ignore=.stowrc
+--ignore=README.md
+--ignore=firefox
