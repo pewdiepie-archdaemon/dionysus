@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # ─────────────────────────────────────────────────────────────────────────────
 #  °˖* ૮(  • ᴗ ｡)っ🍸  pewdiepie/archdaemon/dionysh shhheersh
 #  vers. 1.0
@@ -74,13 +74,14 @@ def run(
         os.makedirs(out_path.parent)
 
     polling_handler = select.poll()
-    polling_handler.register(cava_fifo_fd)
+    polling_handler.register(cava_fifo_fd, select.POLLIN)
 
     decay_buffer = np.zeros((height, width), dtype=float)
 
+    sleep_duration = 1.0 / fps
     while True:
-        if not polling_handler.poll(select.POLLIN):
-            time.sleep(1.0 / fps)
+        if not polling_handler.poll():
+            time.sleep(sleep_duration)
             continue
 
         line = os.read(cava_fifo_fd, fifo_max_read).decode()
@@ -103,7 +104,7 @@ def run(
         with open(out_path, "w") as out:
             out.write("\n".join(ascii_lines))
 
-        time.sleep(1.0 / fps)
+        time.sleep(sleep_duration)
 
 
 
