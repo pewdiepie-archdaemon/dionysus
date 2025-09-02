@@ -3,8 +3,8 @@
 logfile="/tmp/waybar_watcher_loop_final.log"
 
 # Wallpapers
-wallpaper_with_window="~/.config/hypr/wallpapers/black.png"
-wallpaper_without_window="~/.config/hypr/wallpapers/bg_wallpaper.png"
+wallpaper_with_window="$HOME/.config/hypr/wallpapers/black.png"
+wallpaper_without_window="$HOME/.config/hypr/wallpapers/bg_wallpaper.png"
 
 current_wallpaper=""
 eww_visible=false
