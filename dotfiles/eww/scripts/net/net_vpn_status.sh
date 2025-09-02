@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 # ~/.config/eww/scripts/net/net_vpn_status.sh
-# Show VPN status + country (for Eww)
+# Show VPN status (local check, no external calls)
 
-if sudo /usr/bin/ipsec statusall 2>/dev/null | grep -q "ESTABLISHED"; then
-  country=$(curl -s ifconfig.co/country 2>/dev/null)
-  [[ -z "$country" ]] && country="UNKNOWN"
-  echo "[ФАНТОМ]"
+VPN_NETS_REGEX="${VPN_NETS_REGEX:-^10\\.6\\.}"
+if ip -4 -o addr show 2>/dev/null | awk -v re="$VPN_NETS_REGEX" '$3=="inet" && $4 ~ re {found=1} END{exit !found}' \
+   || (command -v ipsec >/dev/null 2>&1 && ipsec statusall 2>/dev/null | grep -q "ESTABLISHED"); then
+  echo "[VPN]"
 else
-  echo "KAPUTT"
+  echo ""
 fi
 
