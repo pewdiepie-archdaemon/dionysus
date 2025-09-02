@@ -9,14 +9,16 @@
 #
 # ─────────────────────────────────────────────────────────────────────────────
 
-iface="wlp4s0"   # Wi-Fi interface
-max_speed=12500000   # adjust: this is 100 Mbps (100*1e6 / 8)
+iface="${NET_IFACE:-$(ip -4 -o route get 1.1.1.1 2>/dev/null | awk '{for(i=1;i<=NF;i++) if($i=="dev"){print $(i+1); exit}}')}"
+[[ -z "${iface:-}" ]] && iface="${NET_IFACE:-$(ip -4 -o route 2>/dev/null | awk '/default/ {print $5; exit}')}"
+[[ -z "${iface:-}" ]] && { echo 0; exit 0; }
+max_speed="${MAX_SPEED_BYTES:-12500000}"   # 100 Mbps default; override via env
 
 # First sample
-rx1=$(awk -v iface=$iface '$1 ~ iface {gsub(":", "", $1); print $2}' /proc/net/dev)
+rx1=$(awk -F'[: ]+' -v iface="$iface" '$2==iface {print $3}' /proc/net/dev)
 sleep 1
 # Second sample
-rx2=$(awk -v iface=$iface '$1 ~ iface {gsub(":", "", $1); print $2}' /proc/net/dev)
+rx2=$(awk -F'[: ]+' -v iface="$iface" '$2==iface {print $3}' /proc/net/dev)
 
 bps=$((rx2 - rx1))              # bytes per second
 percent=$((bps * 100 / max_speed))
