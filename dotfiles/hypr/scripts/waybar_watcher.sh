@@ -94,7 +94,7 @@ checkWorkspace() {
 
 checkWorkspace # Initialization
 socat -u UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock - | \
-  awk '/closewindow>>|openwindow>>|movewindow>>|createworkspace>>/{print;fflush()}' | \
+  awk '/closewindow>>|openwindow>>|movewindow>>|workspace>>|createworkspace>>/{print;fflush()}' | \
   while read -r line; do
     checkWorkspace
   done
