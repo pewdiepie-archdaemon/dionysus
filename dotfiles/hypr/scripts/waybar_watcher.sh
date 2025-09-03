@@ -36,7 +36,7 @@ if ! pgrep -x hyprpaper > /dev/null; then
     sleep 1
 fi
 
-while true; do
+checkWorkspace() {
     echo "--- $(date) ---" >> "$logfile"
 
     active_workspace=$(hyprctl activeworkspace -j | jq -r '.id')
@@ -90,7 +90,12 @@ while true; do
             waybar_visible=true
         fi
     fi
+}
 
-    sleep 0.5
-done
+checkWorkspace # Initialization
+socat -u UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock - | \
+  awk '/closewindow>>|openwindow>>|movewindow>>|createworkspace>>|destroyworkspace>>|focusedmon>>/{print;fflush()}' | \
+  while read -r line; do
+    checkWorkspace
+  done
 
