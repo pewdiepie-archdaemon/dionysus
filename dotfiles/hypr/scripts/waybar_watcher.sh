@@ -5,10 +5,12 @@ logfile="/tmp/waybar_watcher_loop_final.log"
 # Wallpapers
 wallpaper_with_window="/home/pewds/.config/hypr/wallpapers/black.png"
 wallpaper_without_window="/home/pewds/.config/hypr/wallpapers/bg_wallpaper.png"
+hyprctl hyprpaper preload "$wallpaper_with_window"
+hyprctl hyprpaper preload "$wallpaper_without_window"
 
 current_wallpaper=""
-eww_visible=false
-waybar_visible=false
+eww_visible=$(eww active-windows >/dev/null && echo true || echo false)
+waybar_visible=$(pgrep -x waybar >/dev/null && echo true || echo false)
 
 monitor=$(hyprctl monitors -j | jq -r '.[0].name')
 
@@ -48,16 +50,13 @@ while true; do
         # No windows → Eww on, Waybar off
         if [ "$current_wallpaper" != "$wallpaper_without_window" ]; then
             echo "Switching to wallpaper WITHOUT window" >> "$logfile"
-            hyprctl hyprpaper preload "$wallpaper_without_window"
-            sleep 0.3
             hyprctl hyprpaper wallpaper "$monitor,$wallpaper_without_window"
             current_wallpaper="$wallpaper_without_window"
         fi
 
         if ! $eww_visible; then
             echo "Launching Eww widgets..." >> "$logfile"
-            pgrep -x eww || eww daemon &
-            sleep 1
+            pgrep -x eww || eww daemon &&
             eww open-many $eww_windows
             eww_visible=true
         fi
@@ -72,8 +71,6 @@ while true; do
         # Windows → Waybar on, Eww off
         if [ "$current_wallpaper" != "$wallpaper_with_window" ]; then
             echo "Switching to wallpaper WITH window" >> "$logfile"
-            hyprctl hyprpaper preload "$wallpaper_with_window"
-            sleep 0.3
             hyprctl hyprpaper wallpaper "$monitor,$wallpaper_with_window"
             current_wallpaper="$wallpaper_with_window"
         fi
