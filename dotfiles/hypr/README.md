@@ -45,6 +45,7 @@ hyprland/
   - **brightnessctl** (backlight control)
   - **curl** (network requests in scripts)
   - **lm-sensors** (for temps, fans, voltages)
+  - **socat** (for hyprland socket events)
 
 This config ties into your other dotfiles:
 
