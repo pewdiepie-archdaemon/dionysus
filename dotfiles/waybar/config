@@ -85,7 +85,7 @@
     "format": "{}",
     "tooltip": true,
     "tooltip-format": "Toggle ASUS profile",
-    "on-click": "/home/pewds/.config/cycle-profile.sh"
+    "on-click": "~/.config/hypr/scripts/asus-kbd/cycle-profile.sh"
   },
 
 
