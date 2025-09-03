@@ -9,8 +9,8 @@ hyprctl hyprpaper preload "$wallpaper_with_window"
 hyprctl hyprpaper preload "$wallpaper_without_window"
 
 current_wallpaper=""
-eww_visible=$(eww active-windows >/dev/null && echo true || echo false)
-waybar_visible=$(pgrep -x waybar >/dev/null && echo true || echo false)
+eww_visible=$([ "$(eww active-windows)" ] && echo true || echo false)
+waybar_visible=$([ "$(pgrep -x waybar)" ] && echo true || echo false)
 
 monitor=$(hyprctl monitors -j | jq -r '.[0].name')
 
