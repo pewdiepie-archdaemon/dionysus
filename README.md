@@ -39,27 +39,27 @@ running on my **ROG Zephyrus G15** (_dionysus_).
   - Nord-inspired **neon-radioactive theme**  
 
 ## Demo
-![Hyprland Demo 2](../assets/demo.gif)
+![Hyprland Demo 2](assets/demo.gif)
 ### Neofetch
-![Neofetch](../assets/demo-neofetch.gif)
+![Neofetch](assets/demo-neofetch.gif)
 ### Eww
-![Eww HUD](../assets/demo-eww.png)
+![Eww HUD](assets/demo-eww.png)
 ### Rofi
-![Rofi Demo](../assets/demo-rofi.png)
+![Rofi Demo](assets/demo-rofi.png)
 ### Cava
-![Cava Visualizer](../assets/demo-cava.gif)
+![Cava Visualizer]assets/demo-cava.gif)
 ### Alacritty + Waybar
-![Alacritty](../assets/demo-alacritty.png)
+![Alacritty](assets/demo-alacritty.png)
 
 ##  Contents
-- [alacritty](alacritty/) → terminal config  
-- [cava](cava/) → audio visualizer  
-- [eww](eww/) → HUD & widgets  
-- [firefox](firefox/) → browser theme  
-- [hypr](hypr/) → window manager  
-- [neofetch](neofetch/) → animated fetch  
-- [rofi](rofi/) → launcher + powermenu  
-- [waybar](waybar/) → status bar  
-- [zsh](zsh/) → shell configs  
+- [alacritty](dotfiles/alacritty/) → terminal config  
+- [cava](dotfiles/cava/) → audio visualizer  
+- [eww](dotfiles/eww/) → HUD & widgets  
+- [firefox](dotfiles/firefox/) → browser theme  
+- [hypr](dotfiles/hypr/) → window manager  
+- [neofetch](dotfiles/neofetch/) → animated fetch  
+- [rofi](dotfiles/rofi/) → launcher + powermenu  
+- [waybar](dotfiles/waybar/) → status bar  
+- [zsh](dotfiles/zsh/) → shell configs  
 
 
