@@ -28,8 +28,12 @@ fi
 # ASCII bar
 filled=$((vol_int / 10))
 empty=$((10 - filled))
-bar=$(printf '█%.0s' $(seq 1 $filled))
-pad=$(printf '░%.0s' $(seq 1 $empty))
+
+bar=""
+pad=""
+((filled > 0)) && bar=$(printf '█%.0s' $(seq 1 $filled))
+((empty > 0)) && pad=$(printf '░%.0s' $(seq 1 $empty))
+
 ascii_bar="[$bar$pad]"
 
 # Color logic
@@ -48,6 +52,7 @@ else
   tooltip="Audio: $vol_int%\nOutput: $sink"
 fi
 
+vol_formatted=$(printf "%3d" "$vol_int")
 # Final JSON output
-echo "{\"text\":\"<span foreground='$fg'>$icon $ascii_bar $vol_int%</span>\",\"tooltip\":\"$tooltip\"}"
+echo "{\"text\":\"<span foreground='$fg'>$icon $ascii_bar $vol_formatted%</span>\",\"tooltip\":\"$tooltip\"}"
 
