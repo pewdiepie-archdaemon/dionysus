@@ -1,0 +1,22 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.swp
+*~
+*.bak
+
+# Shell temp files
+*.tmp
+
+# Logs
+*.log
+
+# Compiled scripts (if any)
+*.pyc
+__pycache__/
+
+# Node or build artifacts (if applicable)
+node_modules/
+dist/
