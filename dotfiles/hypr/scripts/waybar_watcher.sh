@@ -2,6 +2,13 @@
 
 logfile="/tmp/waybar_watcher_loop_final.log"
 
+# Start hyprpaper if needed
+if ! pgrep -x hyprpaper > /dev/null; then
+    echo "Starting hyprpaper..." >> "$logfile"
+    hyprpaper &
+    sleep 1
+fi
+
 # Wallpapers
 wallpaper_with_window="/home/pewds/.config/hypr/wallpapers/black.png"
 wallpaper_without_window="/home/pewds/.config/hypr/wallpapers/bg_wallpaper.png"
@@ -29,14 +36,6 @@ eww_windows="active_workspace \
              visualizer_window \
              welcome_text \
              workspace_window_text"
-
-
-# Start hyprpaper if needed
-if ! pgrep -x hyprpaper > /dev/null; then
-    echo "Starting hyprpaper..." >> "$logfile"
-    hyprpaper &
-    sleep 1
-fi
 
 while true; do
     echo "--- $(date) ---" >> "$logfile"
