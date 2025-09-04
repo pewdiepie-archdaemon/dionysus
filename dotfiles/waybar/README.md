@@ -6,6 +6,7 @@
  
 ## Custom **Waybar** config.
 ![Waybar Demo](https://github.com/user-attachments/assets/e07b2650-40b2-41df-8efe-9e96f7d6871f)  
+
 ---
 
 ##  Features

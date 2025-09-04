@@ -8,6 +8,7 @@
 
 
 ![Neofetch Demo Gif](https://github.com/user-attachments/assets/30c1e405-c73a-43da-a8ac-6ea9b52317a7) 
+
 ---
 
 ##  Features
@@ -40,4 +41,3 @@ Frames live in `frames_colour` can be changed to whatever.
 
 **Note:** animated-neofetch.sh caches your neofetch setting for faster load, SO if you make edits please remember to `rm -f ~/.cache/neofetch.txt`.. I'm aware there is fast fetch. 
  
-

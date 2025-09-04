@@ -8,6 +8,7 @@
 A custom **eww (Elkowar’s Wacky Widgets) HUD** for Linux — this is duct-taped together ASCII art, system stats, network monitoring, and neon reactor-core vibes. 
 
 ![Eww Demo Png](https://github.com/user-attachments/assets/2603a6bb-a50f-4129-be30-90361cf4c8c7)
+
 ---
 
 ## Features

@@ -7,6 +7,7 @@
 ## Custom **hyprland** config
 Tuned for EWW integration, CAVA visualizer, and Waybar  
 ![Hyprland Demo](https://github.com/user-attachments/assets/1f150827-da7d-4c0d-92f3-8bf37fc5ce44)  
+
 ---
 
 ##  Features
