@@ -7,6 +7,7 @@
 ## Custom **CAVA** config
 Outputs raw ASCII data for easy integration.
 ![EWW Demo Png](https://github.com/user-attachments/assets/bb28e55d-cd8c-4ee4-a30b-dde3e800368b)
+
 ---
 
 ##  Features
@@ -33,5 +34,4 @@ or in terminal:
 ```
 watch -n0.1 cat /tmp/visualizer.txt
 ```
-
 
