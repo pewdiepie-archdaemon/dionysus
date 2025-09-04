@@ -6,7 +6,7 @@
 
 ## Custom **CAVA** config
 Outputs raw ASCII data for easy integration.
-![EWW Demo Png](https://github.com/user-attachments/assets/2603a6bb-a50f-4129-be30-90361cf4c8c7)
+![EWW Demo Png](https://github.com/user-attachments/assets/bb28e55d-cd8c-4ee4-a30b-dde3e800368b)
 ---
 
 ##  Features
