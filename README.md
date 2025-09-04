@@ -47,7 +47,7 @@ running on my **ROG Zephyrus G15** (_dionysus_).
 ### Rofi
 ![Rofi Demo](assets/demo-rofi.png)
 ### Cava
-![Cava Visualizer]assets/demo-cava.gif)
+![Cava Visualizer](assets/demo-cava.gif)
 ### Alacritty + Waybar
 ![Alacritty](assets/demo-alacritty.png)
 
