@@ -6,7 +6,7 @@
 
 ## Custom **CAVA** config
 Outputs raw ASCII data for easy integration.
-![Eww Demo Png](../../assets/demo-cava.png)
+![EWW Demo Png](https://github.com/user-attachments/assets/2603a6bb-a50f-4129-be30-90361cf4c8c7)
 ---
 
 ##  Features
@@ -20,7 +20,7 @@ Raw ASCII output → written to /tmp/cava.raw so it can be piped into:
 Run with `cava -p ~/.config/cava/config`
 CAVA writes raw ASCII bars to `/tmp/cava.raw`
 
-![Eww Demo Gif](../../assets/demo-cava.gif)
+![Cava Demo Gif](https://github.com/user-attachments/assets/658adf6c-a9c7-4f45-ac65-9c7373a444f7)
 
 ## Pipe into your visualizer
 Can pair with: [audio_visualizer.py](../eww/scripts/audio/audio_visualizer.py) for Ascii style visualizer.

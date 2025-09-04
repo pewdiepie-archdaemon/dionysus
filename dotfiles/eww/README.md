@@ -7,7 +7,7 @@
 ## Custom animated **EWW*. 
 A custom **eww (Elkowar’s Wacky Widgets) HUD** for Linux — this is duct-taped together ASCII art, system stats, network monitoring, and neon reactor-core vibes. 
 
-![Eww Demo Png](../../assets/demo-eww.png)
+![Eww Demo Png](https://github.com/user-attachments/assets/2603a6bb-a50f-4129-be30-90361cf4c8c7)
 ---
 
 ## Features
@@ -15,7 +15,7 @@ A custom **eww (Elkowar’s Wacky Widgets) HUD** for Linux — this is duct-tape
   - Easy monitor of sensors and network
   - Атмосфера холодного цеха
 
-![Eww Demo Gif](../../assets/demo-eww.gif)
+![Eww Demo Gif](https://github.com/user-attachments/assets/3a538ab9-bdd9-4c82-8f0b-67a327dd9007)
   
 ```
 eww/

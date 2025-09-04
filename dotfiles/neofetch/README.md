@@ -7,7 +7,7 @@
 ## Custom animated **Neofetch**.
 
 
-![Neofetch Demo Gif](../../assets/demo-neofetch.gif)  
+![Neofetch Demo Gif](https://github.com/user-attachments/assets/30c1e405-c73a-43da-a8ac-6ea9b52317a7) 
 ---
 
 ##  Features
@@ -15,7 +15,7 @@
   - **Animated Ascii** via `animated-neofetch.sh` 
   - Fast load.
 
-![Neofetch Demo Png](../../assets/demo-neofetch.png)
+![Neofetch Demo Png](https://github.com/user-attachments/assets/13fa40ce-5831-4f63-b765-6d5ba46a00a3)
 
 ```
 neofetch/  

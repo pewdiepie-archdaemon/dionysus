@@ -6,7 +6,7 @@
  
 ## Custom **hyprland** config
 Tuned for EWW integration, CAVA visualizer, and Waybar  
-![Hyprland Demo](../../assets/demo-hypr.gif)  
+![Hyprland Demo](https://github.com/user-attachments/assets/1f150827-da7d-4c0d-92f3-8bf37fc5ce44)  
 ---
 
 ##  Features
@@ -14,7 +14,7 @@ Tuned for EWW integration, CAVA visualizer, and Waybar
   - Firefox preload for smooth quick access. 
   - ASUS keyboard fix scripts – brightness, breathing, and profile cycling
 
-![Hyprland Demo 2](../../assets/demo-hypr-2.gif)
+![Hyprland Demo 2](https://github.com/user-attachments/assets/7696c8c0-324d-43f9-aa62-b090f8b3f7e4)
 
 ``` 
 hyprland/

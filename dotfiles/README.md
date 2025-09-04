@@ -39,17 +39,17 @@ running on my **ROG Zephyrus G15** (_dionysus_).
   - Nord-inspired **neon-radioactive theme**  
 
 ## Demo
-![Hyprland Demo 2](../assets/demo.gif)
+![Hyprland Demo 2](https://github.com/user-attachments/assets/3a1ad67c-c612-4a5a-af6a-f2f017ff720d)
 ### Neofetch
-![Neofetch](../assets/demo-neofetch.gif)
+![Neofetch](https://github.com/user-attachments/assets/30c1e405-c73a-43da-a8ac-6ea9b52317a7)
 ### Eww
-![Eww HUD](../assets/demo-eww.png)
+![Eww HUD](https://github.com/user-attachments/assets/2603a6bb-a50f-4129-be30-90361cf4c8c7)
 ### Rofi
-![Rofi Demo](../assets/demo-rofi.png)
+![Rofi Demo](https://github.com/user-attachments/assets/880ea063-270f-4f8b-bf8a-f87cde2d1a90)
 ### Cava
-![Cava Visualizer](../assets/demo-cava.gif)
+![Cava Visualizer](https://github.com/user-attachments/assets/658adf6c-a9c7-4f45-ac65-9c7373a444f7)
 ### Alacritty + Waybar
-![Alacritty](../assets/demo-alacritty.png)
+![Alacritty](https://github.com/user-attachments/assets/2b7fd8ec-3d24-47db-9524-0900e3ff6fe1)
 
 ##  Contents
 - [alacritty](alacritty/) → terminal config  

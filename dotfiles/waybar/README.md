@@ -1,29 +1,29 @@
-# Waybar Config
+# waybar config
 
 ───────────────────────────────────────────────  
- °˖* ૮( • ᴗ ｡)っ🍸 shheersh - Dionysus vers. 1.0   
+ °˖* ૮( • ᴗ ｡)っ🍸 shheersh - dionysus vers. 1.0   
  ───────────────────────────────────────────────  
  
-## Custom **Waybar** config.
-![Waybar Demo](../../assets/demo-waybar.png)  
+## custom **waybar** config.
+![waybar demo](https://github.com/user-attachments/assets/e07b2650-40b2-41df-8efe-9e96f7d6871f)  
 ---
 
-##  Features
-- **Custom workspace** clickable modules (`workspace-1.sh` … `workspace-4.sh`)
-- **Battery status** with JSON script + native fallback, dynamic icons, warnings
-- **Volume control** via PipeWire (`wpctl`) with mute and scroll-to-change volume.
-- **Microphone toggle** with instant mute/unmute
-- **Brightness control** with slider, scroll actions, and toggle.
-- **VPN integration** with NordVPN status.
-- **Bluetooth module** with custom toggle script and tooltips
-- **Network widget** with icons, bandwidth stats, and `nm-connection-editor` launcher
-- **ASUS laptop profile** module, showing/toggling performance modes
-- **Power menu** integration via Rofi  
+##  features
+- **custom workspace** clickable modules (`workspace-1.sh` … `workspace-4.sh`)
+- **battery status** with json script + native fallback, dynamic icons, warnings
+- **volume control** via pipewire (`wpctl`) with mute and scroll-to-change volume.
+- **microphone toggle** with instant mute/unmute
+- **brightness control** with slider, scroll actions, and toggle.
+- **vpn integration** with nordvpn status.
+- **bluetooth module** with custom toggle script and tooltips
+- **network widget** with icons, bandwidth stats, and `nm-connection-editor` launcher
+- **asus laptop profile** module, showing/toggling performance modes
+- **power menu** integration via rofi  
 
-![Waybar Demo 2](../../assets/demo-waybar-2.png)  
-![Waybar Demo 2.1](../../assets/demo-waybar-2_1.png)
+![waybar demo 2](https://github.com/user-attachments/assets/6709a580-f138-41d3-9ae2-2c34256a4a20)  
+![waybar demo 2.1](https://github.com/user-attachments/assets/d007f483-f18e-493f-b15d-dbb0ded056a2)
 ```
-├── README.md
+├── readme.md
 ├── config
 ├── demo.png
 ├── scripts
@@ -44,25 +44,25 @@
 │       └── workspace-4.sh
 └── style.css
 ```
-![Demo](../../assets/demo-firefox.png)
+![demo](https://github.com/user-attachments/assets/981a4cd0-c1ba-4d6a-8d9d-189c9ca3328c)
 
-## Requirements
+## requirements
 - `hyprland` (hyprctl for workspaces)
 - `rofi` (for power menu)
-- `wpctl` (PipeWire volume control)
+- `wpctl` (pipewire volume control)
 - `playerctl`
 - `brightnessctl`
 - `nm-connection-editor`
-- `nordvpn` (CLI client)
-- `pactl` (PulseAudio/PipeWire control)
-- `Nerd Font` for icons
+- `nordvpn` (cli client)
+- `pactl` (pulseaudio/pipewire control)
+- `nerd font` for icons
 
-## Usage
-Requires a Nerd Font (for icons such as 󰤆, 󰖪, etc.)
-Make sure scripts are executable:  
+## usage
+requires a nerd font (for icons such as 󰤆, 󰖪, etc.)
+make sure scripts are executable:  
 ```chmod +x ~/.config/waybar/scripts/*.sh```  
 ```chmod +x ~/.config/waybar/scripts/workspaces/*.sh```
-- `config` → main Waybar configuration
+- `config` → main waybar configuration
 - `style.css` → custom styling
 - `scripts/` → helper scripts for modules
 

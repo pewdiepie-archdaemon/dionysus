@@ -1,7 +1,7 @@
 # Firefox Color Theme
 
 Nord-inspired, neon-radioactive firefox theme
-![Firefox Demo](../../assets/demo-firefox.png)
+![Firefox Demo](https://github.com/user-attachments/assets/981a4cd0-c1ba-4d6a-8d9d-189c9ca3328c)
 
 ## Usage
 Webinstall:
