@@ -5,7 +5,7 @@
  ───────────────────────────────────────────────  
  
 ## Custom **Waybar** config.
-![Waybar Demo](../../assets/demo-waybar.png)  
+![Waybar Demo](https://github.com/user-attachments/assets/e07b2650-40b2-41df-8efe-9e96f7d6871f)  
 ---
 
 ##  Features
@@ -20,8 +20,8 @@
 - **ASUS laptop profile** module, showing/toggling performance modes
 - **Power menu** integration via Rofi  
 
-![Waybar Demo 2](../../assets/demo-waybar-2.png)  
-![Waybar Demo 2.1](../../assets/demo-waybar-2_1.png)
+![Waybar Demo 2](https://github.com/user-attachments/assets/6709a580-f138-41d3-9ae2-2c34256a4a20)  
+![Waybar Demo 2.1](https://github.com/user-attachments/assets/d007f483-f18e-493f-b15d-dbb0ded056a2)
 ```
 ├── README.md
 ├── config
@@ -44,7 +44,7 @@
 │       └── workspace-4.sh
 └── style.css
 ```
-![Demo](../../assets/demo-firefox.png)
+![Demo](https://github.com/user-attachments/assets/981a4cd0-c1ba-4d6a-8d9d-189c9ca3328c)
 
 ## Requirements
 - `hyprland` (hyprctl for workspaces)
