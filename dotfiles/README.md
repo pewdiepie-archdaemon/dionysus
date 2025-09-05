@@ -62,4 +62,3 @@ running on my **ROG Zephyrus G15** (_dionysus_).
 - [waybar](waybar/) → status bar  
 - [zsh](zsh/) → shell configs  
 
-
