@@ -17,10 +17,9 @@
     (label :text "> Добро пожаловать, ${USER}" :class "label-primary" :halign "end" :style "margin-top: -20px;")
 
     ;; Date Line
-    (label :text "Сегодня: ${welcome_date}" :class "label-primary" :halign "end" :style "margin-top: -10px;")
+    (label :text "Текущая дата: ${welcome_date}" :class "label-primary" :halign "end" :style "margin-top: -10px;")
 
     ;; Weather Line
     (label :text "Погода: ${weather_forecast}" :class "label-primary" :halign "end" :style "margin-top: -10px;")
   )
 )
-
