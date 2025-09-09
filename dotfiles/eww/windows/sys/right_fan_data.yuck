@@ -17,7 +17,7 @@
         ;; FAN
         (box :orientation "horizontal" :halign "end" :space "4px" :style "margin-top:-10px;"
           (label :text "> " :class "power-label2"   :halign "end"   )
-          (label :text "цпу вент:  " :class "power-label3")
+          (label :text "цпу вент:     " :class "power-label3")
           (label :text cpu_fan_rpm :class "power-value" :halign "end"  )
         )
 
@@ -30,7 +30,7 @@
         ;; fan
         (box :orientation "horizontal" :halign "end" :space "4px" :style "margin-top:-10px;"
           (label :text "> " :class "power-label2"   :halign "end"   )
-          (label :text "гпу вент:  " :class "power-label3")
+          (label :text "гпу вент:     " :class "power-label3")
           (label :text gpu_fan_rpm :class "power-value" :halign "end"  )
         )
 

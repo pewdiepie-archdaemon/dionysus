@@ -15,7 +15,7 @@
         ;; Power Draw
         (box :orientation "horizontal" :halign "end" :space "4px" :style "margin-top: -10px;"
           (label :text "> " :class "power-label2"   :halign "end"   )
-          (label :text "нагрузка:   " :class "power-label")
+          (label :text "нагрузка:  " :class "power-label")
           (label :text power_draw :class "power-value"  :halign "end"  )
         )
 
@@ -36,7 +36,7 @@
            ;; GPU Voltage
         (box :orientation "horizontal" :halign "start" :space "4px" :style "margin-top: -10px;"
           (label :text "> " :class "power-label2"   :halign "end"   )
-          (label :text "питание:      " :class "power-label")
+          (label :text "напряжение: " :class "power-label")
           (label :text dc_voltage :class "power-value"    :halign "end" )
         )
       )
