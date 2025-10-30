@@ -130,11 +130,11 @@ sections:
         - icon: "📁"
           title: "Explore on GitHub"
           description: "Browse the complete source code, configurations, and documentation"
-          url: "https://github.com/rhenryw/dionysus-website"
+          url: "https://github.com/pewdiepie-archdaemon/dionysus"
         - icon: "💬"
           title: "Join the Community"
           description: "Get help, share your setup, and connect with other users"
-          url: "https://discord.gg/XygZfmMM86"
+          url: "https://discord.com/invite/pewdiepie"
 
   - type: footer
     config:
