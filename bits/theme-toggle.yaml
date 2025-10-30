@@ -1,0 +1,80 @@
+Name: theme-toggle
+CSS: |
+  [data-bit="theme-toggle"] {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+  [data-bit="theme-toggle"] button {
+    background: var(--toggle-bg, #374151);
+    border: 2px solid var(--toggle-border, #4B5563);
+    color: var(--toggle-text, #F9FAFB);
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  [data-bit="theme-toggle"] button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  :root {
+    --bg-primary: #0A0A0A;
+    --bg-secondary: #1A1A1A;
+    --text-primary: #FFFFFF;
+    --text-secondary: #B0B0B0;
+    --accent: #FF0000;
+    --accent-dark: #CC0000;
+    --accent-glow: rgba(255, 0, 0, 0.3);
+    --border: #2A2A2A;
+    --toggle-bg: #2A2A2A;
+    --toggle-border: #FF0000;
+    --toggle-text: #FFFFFF;
+  }
+  body.light-mode {
+    --bg-primary: #F5F5F5;
+    --bg-secondary: #FFFFFF;
+    --text-primary: #1A1A1A;
+    --text-secondary: #666666;
+    --accent: #CC0000;
+    --accent-dark: #990000;
+    --accent-glow: rgba(204, 0, 0, 0.2);
+    --border: #E0E0E0;
+    --toggle-bg: #E0E0E0;
+    --toggle-border: #CC0000;
+    --toggle-text: #1A1A1A;
+  }
+JS: |
+  const { container } = ctx;
+  const btn = document.createElement('button');
+  const icon = document.createElement('span');
+  const text = document.createElement('span');
+  
+  function updateTheme() {
+    const isLight = document.body.classList.contains('light-mode');
+    icon.textContent = isLight ? '🌙' : '☀️';
+    text.textContent = isLight ? 'Dark' : 'Light';
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  }
+  
+  // Load saved theme
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'light') {
+    document.body.classList.add('light-mode');
+  }
+  
+  btn.onclick = () => {
+    document.body.classList.toggle('light-mode');
+    updateTheme();
+  };
+  
+  btn.appendChild(icon);
+  btn.appendChild(text);
+  container.appendChild(btn);
+  updateTheme();

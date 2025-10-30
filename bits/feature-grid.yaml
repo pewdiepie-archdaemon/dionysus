@@ -1,0 +1,96 @@
+Name: feature-grid
+CSS: |
+  [data-bit="feature-grid"] {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  [data-bit="feature-grid"] h2 {
+    color: var(--text-primary);
+    font-size: 42px;
+    font-weight: 800;
+    margin: 0 0 50px 0;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  [data-bit="feature-grid"] h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--accent);
+    margin: 20px auto 0;
+    box-shadow: 0 0 10px var(--accent-glow);
+  }
+  [data-bit="feature-grid"] .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+  }
+  [data-bit="feature-grid"] .feature {
+    background: var(--bg-secondary);
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 30px;
+    transition: all 0.3s ease;
+  }
+  [data-bit="feature-grid"] .feature:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px var(--accent-glow);
+  }
+  [data-bit="feature-grid"] .feature-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 10px var(--accent-glow));
+  }
+  [data-bit="feature-grid"] .feature-title {
+    color: var(--text-primary);
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+  }
+  [data-bit="feature-grid"] .feature-desc {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+JS: |
+  const { container, config } = ctx;
+  
+  if (config.title) {
+    const title = document.createElement('h2');
+    title.textContent = config.title;
+    container.appendChild(title);
+  }
+  
+  const grid = document.createElement('div');
+  grid.className = 'grid';
+  
+  const features = config.features || [];
+  features.forEach(feature => {
+    const featureDiv = document.createElement('div');
+    featureDiv.className = 'feature';
+    
+    if (feature.icon) {
+      const icon = document.createElement('div');
+      icon.className = 'feature-icon';
+      icon.textContent = feature.icon;
+      featureDiv.appendChild(icon);
+    }
+    
+    const title = document.createElement('div');
+    title.className = 'feature-title';
+    title.textContent = feature.title || '';
+    
+    const desc = document.createElement('div');
+    desc.className = 'feature-desc';
+    desc.textContent = feature.description || '';
+    
+    featureDiv.appendChild(title);
+    featureDiv.appendChild(desc);
+    grid.appendChild(featureDiv);
+  });
+  
+  container.appendChild(grid);

@@ -1,0 +1,66 @@
+Name: link-card
+CSS: |
+  [data-bit="link-card"] {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  [data-bit="link-card"] .card {
+    background: var(--bg-secondary);
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 16px;
+    transition: all 0.3s ease;
+    display: block;
+    text-decoration: none;
+  }
+  [data-bit="link-card"] .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px var(--accent-glow);
+    border-color: var(--accent);
+  }
+  [data-bit="link-card"] .card-title {
+    color: var(--text-primary);
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+  }
+  [data-bit="link-card"] .card-desc {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin: 0;
+  }
+  [data-bit="link-card"] .card-icon {
+    font-size: 24px;
+    margin-right: 12px;
+  }
+JS: |
+  const { container, config } = ctx;
+  
+  const links = config.links || [];
+  links.forEach(link => {
+    const card = document.createElement('a');
+    card.className = 'card';
+    card.href = link.url || '#';
+    card.target = '_blank';
+    card.rel = 'noopener noreferrer';
+    
+    const title = document.createElement('div');
+    title.className = 'card-title';
+    if (link.icon) {
+      const icon = document.createElement('span');
+      icon.className = 'card-icon';
+      icon.textContent = link.icon;
+      title.appendChild(icon);
+    }
+    title.appendChild(document.createTextNode(link.title || ''));
+    
+    const desc = document.createElement('div');
+    desc.className = 'card-desc';
+    desc.textContent = link.description || '';
+    
+    card.appendChild(title);
+    card.appendChild(desc);
+    container.appendChild(card);
+  });

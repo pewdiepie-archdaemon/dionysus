@@ -1,0 +1,44 @@
+Name: doc-header
+CSS: |
+  [data-bit="doc-header"] {
+    background: var(--bg-secondary);
+    border-bottom: 2px solid var(--border);
+    padding: 60px 20px;
+    text-align: center;
+  }
+  [data-bit="doc-header"] h1 {
+    color: var(--text-primary);
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  }
+  [data-bit="doc-header"] .subtitle {
+    color: var(--text-secondary);
+    font-size: 20px;
+    margin: 0 0 24px 0;
+  }
+  [data-bit="doc-header"] .author {
+    color: var(--accent);
+    font-size: 16px;
+    font-weight: 600;
+  }
+JS: |
+  const { container, config } = ctx;
+  const wrapper = document.createElement('div');
+  
+  const h1 = document.createElement('h1');
+  h1.textContent = config.title || 'Project';
+  
+  const subtitle = document.createElement('div');
+  subtitle.className = 'subtitle';
+  subtitle.textContent = config.subtitle || '';
+  
+  const author = document.createElement('div');
+  author.className = 'author';
+  author.textContent = config.author || '';
+  
+  wrapper.appendChild(h1);
+  wrapper.appendChild(subtitle);
+  wrapper.appendChild(author);
+  container.appendChild(wrapper);
