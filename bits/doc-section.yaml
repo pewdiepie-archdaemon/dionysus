@@ -1,0 +1,67 @@
+Name: doc-section
+CSS: |
+  [data-bit="doc-section"] {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+  [data-bit="doc-section"] h2 {
+    color: var(--text-primary);
+    font-size: 36px;
+    font-weight: 800;
+    margin: 0 0 24px 0;
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 16px;
+    text-shadow: 0 0 20px var(--accent-glow);
+  }
+  [data-bit="doc-section"] p {
+    color: var(--text-secondary);
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 0 0 16px 0;
+  }
+  [data-bit="doc-section"] ul {
+    color: var(--text-secondary);
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 0 0 16px 0;
+    padding-left: 24px;
+  }
+  [data-bit="doc-section"] li {
+    margin-bottom: 8px;
+  }
+  [data-bit="doc-section"] a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.2s;
+  }
+  [data-bit="doc-section"] a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+  }
+  [data-bit="doc-section"] code {
+    background: var(--bg-secondary);
+    color: var(--accent);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+  }
+JS: |
+  const { container, config } = ctx;
+  const wrapper = document.createElement('div');
+  
+  if (config.title) {
+    const h2 = document.createElement('h2');
+    h2.textContent = config.title;
+    wrapper.appendChild(h2);
+  }
+  
+  if (config.content) {
+    const content = document.createElement('div');
+    content.innerHTML = config.content;
+    wrapper.appendChild(content);
+  }
+  
+  container.appendChild(wrapper);

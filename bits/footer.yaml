@@ -1,0 +1,46 @@
+Name: footer
+CSS: |
+  [data-bit="footer"] {
+    background: var(--bg-secondary);
+    border-top: 2px solid var(--border);
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 60px;
+  }
+  [data-bit="footer"] .badge {
+    margin-bottom: 20px;
+  }
+  [data-bit="footer"] .badge img {
+    max-width: 200px;
+    height: auto;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+  }
+  [data-bit="footer"] .badge img:hover {
+    opacity: 1;
+  }
+  [data-bit="footer"] .copyright {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-top: 16px;
+  }
+JS: |
+  const { container, config } = ctx;
+  const wrapper = document.createElement('div');
+  
+  if (config.badge) {
+    const badge = document.createElement('div');
+    badge.className = 'badge';
+    const img = document.createElement('img');
+    img.src = config.badge;
+    img.alt = 'FLASH Badge';
+    badge.appendChild(img);
+    wrapper.appendChild(badge);
+  }
+  
+  const copyright = document.createElement('div');
+  copyright.className = 'copyright';
+  copyright.textContent = config.copyright || '© 2025';
+  
+  wrapper.appendChild(copyright);
+  container.appendChild(wrapper);

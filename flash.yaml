@@ -1,0 +1,142 @@
+background:
+  color: "#0A0A0A"
+
+metadata:
+  title: "Dionysus - PewDiePie's Dotfiles Collection"
+  description: "A premium collection of dotfiles and configurations for Linux ricing"
+  author: "PewDiePie"
+
+bits:
+  sources:
+    - ./bits/
+
+sections:
+  - type: theme-toggle
+    config: {}
+
+  - type: hero-section
+    config:
+      title: "Dionysus Dotfiles"
+      subtitle: "The Ultimate Linux Desktop Experience"
+      author: "By PewDiePie"
+      ctaText: "Watch Demo"
+      ctaUrl: "https://www.youtube.com/watch?v=2JzOe1Hs26Q"
+
+  - type: feature-grid
+    config:
+      title: "Premium Features"
+      features:
+        - icon: "⚡"
+          title: "Hyprland WM"
+          description: "Modern Wayland compositor with custom shaders, smooth animations, and beautiful effects"
+        - icon: "🎨"
+          title: "EWW Widgets"
+          description: "Custom system monitoring widgets with beautiful styling and real-time updates"
+        - icon: "🎬"
+          title: "Animated Neofetch"
+          description: "60-frame animated ASCII art displays that bring your terminal to life"
+        - icon: "🎵"
+          title: "CAVA Visualizer"
+          description: "Audio visualization with custom shaders including northern lights and spectrum effects"
+        - icon: "🚀"
+          title: "Rofi Launcher"
+          description: "Beautiful application launcher with custom theme and smooth transitions"
+        - icon: "📊"
+          title: "Waybar Status"
+          description: "Highly customizable status bar with modules for everything you need"
+        - icon: "💻"
+          title: "Alacritty Terminal"
+          description: "GPU-accelerated terminal with optimized configuration for speed and beauty"
+        - icon: "🦊"
+          title: "Firefox Custom"
+          description: "Browser customizations that match your desktop aesthetic perfectly"
+
+  - type: screenshot-gallery
+    config:
+      title: "Gallery"
+      items:
+        - image: "./assets/demo-hypr.gif"
+          title: "Hyprland in Action"
+          description: "Smooth window animations and tiling with custom effects"
+          badge: "Animated"
+        - image: "./assets/demo-eww.gif"
+          title: "EWW Widgets"
+          description: "Beautiful system information widgets with live updates"
+          badge: "Animated"
+        - image: "./assets/demo-neofetch.gif"
+          title: "Animated Neofetch"
+          description: "60-frame animated ASCII art system display"
+          badge: "Animated"
+        - image: "./assets/demo-cava.gif"
+          title: "CAVA Audio Visualizer"
+          description: "Real-time audio visualization with custom shaders"
+          badge: "Animated"
+        - image: "./assets/demo-rofi.png"
+          title: "Rofi Application Launcher"
+          description: "Custom themed app launcher with search"
+          badge: "Featured"
+        - image: "./assets/demo-waybar.png"
+          title: "Waybar Status Bar"
+          description: "Modular status bar with system monitoring"
+          badge: "Featured"
+        - image: "./assets/demo-alacritty.png"
+          title: "Alacritty Terminal"
+          description: "GPU-accelerated terminal emulator configuration"
+          badge: "Featured"
+        - image: "./assets/demo-firefox.png"
+          title: "Firefox Customization"
+          description: "Custom browser styling and userChrome.css"
+          badge: "Featured"
+
+  - type: doc-section
+    config:
+      title: "What's Included"
+      content: |
+        <p>This comprehensive dotfiles collection includes everything you need for a stunning Linux desktop:</p>
+        <ul>
+          <li><code>hypr/</code> - Hyprland compositor config with Hyprpaper, custom shaders, and automation scripts</li>
+          <li><code>eww/</code> - ElKowars wacky widgets for ASCII art, system stats, network, and audio monitoring</li>
+          <li><code>neofetch/</code> - 60 hand-crafted animation frames for the ultimate system info display</li>
+          <li><code>cava/</code> - Audio visualizer with 5 custom shaders (bar spectrum, northern lights, spectrogram, and more)</li>
+          <li><code>rofi/</code> - Application launcher with custom theme matching the overall aesthetic</li>
+          <li><code>waybar/</code> - Status bar with custom modules and styling</li>
+          <li><code>alacritty/</code> - Terminal emulator configuration optimized for performance and looks</li>
+          <li><code>firefox/</code> - Browser customizations and theme integration</li>
+          <li><code>zsh/</code> - Shell configuration for enhanced productivity</li>
+        </ul>
+
+  - type: doc-section
+    config:
+      title: "Getting Started"
+      content: |
+        <p><strong>Installation is simple:</strong></p>
+        <ol style="color: var(--text-secondary); line-height: 1.8;">
+          <li>Clone or download this repository to your local machine</li>
+          <li>Browse the <code>dotfiles/</code> directory to see all configurations</li>
+          <li>Review individual README files in each dotfile folder for dependencies</li>
+          <li>Symlink or copy the configs you want to your home directory</li>
+          <li>Customize colors, fonts, and settings to match your preferences</li>
+          <li>Restart your compositor/applications to see the changes</li>
+        </ol>
+        <p style="margin-top: 20px;"><strong>Pro Tip:</strong> Start with one component at a time to understand how everything works together!</p>
+
+  - type: link-card
+    config:
+      links:
+        - icon: "🎥"
+          title: "Watch the Full Demo"
+          description: "See Dionysus in action with all features showcased on YouTube"
+          url: "https://www.youtube.com/watch?v=2JzOe1Hs26Q"
+        - icon: "📁"
+          title: "Explore on GitHub"
+          description: "Browse the complete source code, configurations, and documentation"
+          url: "https://github.com/pewdiepie-archdaemon/dionysus"
+        - icon: "💬"
+          title: "Join the Community"
+          description: "Get help, share your setup, and connect with other users"
+          url: "https://discord.com/invite/pewdiepie"
+
+  - type: footer
+    config:
+      badge: "https://cdn.jsdelivr.net/gh/rhenryw/FLASH@main/img/button.png"
+      copyright: "© PewDiePie 2025"
