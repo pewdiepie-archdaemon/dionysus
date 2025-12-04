@@ -7,7 +7,7 @@
 #      # Opens a Rofi menu with power options
 # ─────────────────────────────────────────────────────────────────────────────
 
-rofi_command="rofi -dmenu -p Power"
+rofi_command="rofi -config ~/.config/rofi/powermenuconfig.rasi -dmenu -p Power"
 
 options="Shutdown\nReboot\nLogout\nSuspend\nLock"
 
